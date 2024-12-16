@@ -1,0 +1,1260 @@
+body {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
+    background-size: 200% 200%;
+    animation: waveAnimation 2s infinite alternate;
+}
+
+@keyframes waveAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+.g1{
+
+    animation: animate__flipInX 5s both;
+}
+
+.g1:hover{
+
+    color: black;
+    animation: animate__rubberBand 4s both;
+}
+
+
+
+@keyframes animate__flipInX {
+    from {
+        transform: perspective(400px) rotateX(90deg);
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    40% {
+        transform: perspective(400px) rotateX(-20deg);
+        animation-timing-function: ease-in;
+    }
+    60% {
+        transform: perspective(400px) rotateX(10deg);
+        opacity: 1;
+    }
+    80% {
+        transform: perspective(400px) rotateX(-5deg);
+    }
+    to {
+        transform: perspective(400px);
+    }
+}
+
+@keyframes animate__rubberBand {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1.25);
+    }
+    40% {
+        transform: scale(0.75);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    65% {
+        transform: scale(0.95);
+    }
+    75% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 30vw; /* Hace que el banner sea relativo al ancho de la ventana */
+    max-height: 230px; /* Limita el tamaño máximo en pantallas grandes */
+    overflow: hidden;
+}
+
+.banner-images-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+
+.banner-images-wrapper img {
+    width: 100%; /* Asegúrate de que las imágenes se adapten al contenedor */
+    flex-shrink: 0; /* No se debe reducir el tamaño de las imágenes */
+}
+
+.banner-image {
+    position: relative;
+    width: 100%;
+    height: 100%;  
+    object-fit: cover;
+}
+
+.banner-buttons {
+    position: absolute;
+    left: 80px; 
+    bottom: 20px;
+    display: flex;
+    gap: 10px; 
+    flex-direction: row; 
+    z-index: 20;
+    
+}
+
+.banner-button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+
+
+
+
+.banner-button:hover {
+    background-color: white;
+    opacity: 1;
+}
+
+.banner-button.active {
+    background-color: #f0862b ;
+}
+
+/* Colores diferentes para cada botón */
+.button1 {
+    background-color: #e94c64;
+}
+
+.button2 {
+    background-color: #5ab038;
+}
+
+.button3 {
+    background-color: #8e418d;
+}
+
+.button4 {
+    background-color: #5b78b1;
+}
+
+
+
+
+.content {
+    padding: 20px;
+    min-height: calc(100vh - 230px); 
+}
+
+
+.linea {
+
+    position: -webkit-sticky; /* Para compatibilidad con Safari */
+    position: sticky;
+    top: 0; /* Esto lo hace quedarse en la parte superior al hacer scroll */
+    z-index: 1000;
+    justify-content: center;
+    background-image:url('img/cinta2.jpg'); 
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    float: center;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 38px;
+}
+
+/* Asegura que el contenido se ajuste correctamente en pantallas más pequeñas */
+@media (max-width: 1300px) {
+    .linea {
+        font-size: 14px; /* Ajusta el tamaño de la fuente para pantallas más pequeñas */
+        padding: 8px; /* Ajusta el padding para no hacer el espacio demasiado grande */
+        background-position: 70% center;
+    }
+}
+.linea img {
+    margin-right: 70px;
+}
+
+
+
+.linea .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 45px;
+}
+
+.linea .search-container input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.linea .search-container button {
+    padding: 5px 10px;
+    background-color: #a4a4a4;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.linea .search-container button:hover {
+    background-color: #dcdcdc;
+}
+
+
+.l {
+    justify-content: center;
+    background: linear-gradient(45deg, #230202, #690a0a, #ad1818, #690a0a, #230202); 
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 25px;
+      background-size: 500% 100%; 
+
+}
+
+
+.line {
+    justify-content: center;
+    overflow: hidden;
+    float: left;
+    display: flex;
+    padding: 1px;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 0.2px;
+    background: linear-gradient(135deg, #e5b61e 50%, #fed428 50%); 
+    text-align: center;
+}
+
+.lin {
+    justify-content: center;
+    top: 0px;
+    overflow: hidden;
+    float: left;
+    display: flex;
+    padding: 1px;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 1px;
+    background-color: #d53468;
+    text-align: center;
+}
+
+.content {
+    padding: 100px;
+    color: black;
+    top: 10px;
+}
+
+
+        
+
+    /* Estilo para el contenedor del video */
+.video-container {
+    position: relative;
+    width: 70%;  /* El contenedor ocupa el 100% del ancho disponible */
+    height: 0;
+    padding-bottom: 30%;  /* Esto mantiene la relación de aspecto 16:9 (100 / 16 * 9 = 56.25%) */
+    overflow: hidden;
+    border-radius:5px;
+    animation: animateBounceInLeft 6s both;
+}
+
+
+@keyframes animateBounceInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+
+/* Estilo para el video */
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Asegura que el video cubra todo el contenedor sin distorsión */
+    border-radius:5px;
+    
+}
+
+
+.card-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.card {
+    perspective: 1000px;
+}
+
+
+.card-content {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card:hover .card-content {
+    transform: rotateY(180deg);
+    animation: animateRubberBand 4s both;
+}
+
+@keyframes animateRubberBand {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1.25);
+    }
+    40% {
+        transform: scale(0.75);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    65% {
+        transform: scale(0.95);
+    }
+    75% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+ 
+
+
+
+
+
+
+.front {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    backface-visibility: hidden;
+}
+
+
+
+.front, .hover-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    opacity: 0;
+    transition: opacity 0.6s;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay p {
+    margin: 0;
+    animation: float 2s infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+.imagen-pequena {
+    margin-left: 10px;
+    
+    width: 250px; 
+    height: auto; 
+    margin: 30px; 
+}
+
+
+
+        .content {
+            padding: 100px;
+            color: black;
+            top: 10px;
+        }
+
+        .card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;  
+    justify-content: center;
+}
+
+.card {
+    perspective: 1000px;
+    flex: 1 1 300px;  
+    max-width: 300px; 
+    margin: 10px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;  
+    box-shadow: 0 0 25px 10px rgba(121, 11, 10, 0.6), 
+                0 0 30px 15px rgba(255, 255, 255, 0.5); /* Efecto de sombra holográfica */
+    backdrop-filter: blur(8px); /* Fondo desenfocado para el efecto de proyección */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde suave */
+    position: relative;
+    overflow: hidden; /* Para asegurarse que el contenido no se desborde durante la animación */
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+
+}
+
+/* Animación de resplandor para el efecto holográfico */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 25px 10px rgba(121, 11, 10, 0.6), 
+                    0 0 30px 15px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 40px 15px rgba(121, 11, 10, 0.8), 
+                    0 0 45px 25px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 25px 10px rgba(121, 11, 10, 0.6), 
+                    0 0 30px 15px rgba(255, 255, 255, 0.5);
+    }
+}
+.card-content {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    display: flex;
+    flex-direction: column;  
+}
+
+.card:hover .card-content {
+    transform: rotateY(180deg);
+}
+
+       .front {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    backface-visibility: hidden;
+}
+        .background-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0; 
+            transition: opacity 0.6s;
+        }
+
+        .card:hover .background-image {
+            opacity: 1; 
+        }
+
+        .reverse-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0; 
+            transition: opacity 0.6s;
+        }
+
+        .card:hover .reverse-image {
+            opacity: 1; 
+        }
+
+        .hover-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0; 
+            transition: opacity 0.6s;
+        }
+
+        .card:hover .hover-image {
+            opacity: 1; 
+        }
+
+            .button {
+
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background-color: green;
+            color: white;
+            text-decoration: none;
+            margin-top: 10px;
+            margin-left: 35%;
+            transition: background-color 0.3s;
+        }
+
+
+        .button:hover {
+            background-color: darkgreen;
+        }
+
+
+
+.repeat-line {
+    width: 100%;
+    height: 25px; 
+    background-image: url('img/cinta.jpg');  
+    background-repeat: repeat-x;  
+    background-position: top center; 
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: 150px;  
+    }
+
+    .banner-buttons {
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .card-container {
+        gap: 10px;
+    }
+
+    .card-content {
+        height: 300px;  
+    }
+
+    .linea, .lin, .l {
+        padding: 10px 5px;  
+    }
+
+    .linea .search-container input[type="text"] {
+        width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .linea {
+        padding: 5px;  
+    }
+
+   /* Cartas: Mostrar en el centro de la páginaaaaaaaaaaaaaaa */
+    .card-container {
+        flex-direction: column;  
+        align-items: center;
+        /* Cartas: Mostrar en el centro de la página */
+    display: flex;
+    justify-content: center;
+    height: 100vh; /* Utiliza toda la altura de la ventana */
+    gap: 20px;
+    display: none; /* Por defecto, ocultar el contenedor */
+    }
+
+
+    .card-content {
+        width: 90%;  
+        height: auto;
+    }
+
+    .button {
+
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.tira {
+    background-image: url('img/tira.jpeg'); 
+    background-repeat: repeat-x; 
+    height: 25px; 
+    width: 100%; 
+    background-size: auto 100%;  /* Mantiene el ancho original de la imagen y ajusta la altura al 100% */
+    margin-bottom: 0px; 
+}
+
+footer {
+  background-color: rgb( 255 , 0 , 0, 0.5);
+  color: white;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: center;  /* Centra el título */
+}
+
+.footer-section ul {
+  list-style: none;
+  text-align: center; /* Centra el contenido de la lista */
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+  color: #ffd700;
+}
+
+.social-media {
+  list-style: none;
+  text-align: center;
+}
+
+.social-media li {
+  margin-bottom: 10px;
+}
+
+.social-media li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.social-media li a:hover {
+  color: #ffd700;
+}
+
+.footer-bottom {
+  background-color: #3e0d0c;
+  text-align: center;
+  padding: 10px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+
+/* Ajustes responsivos para pantallas más pequeñas */
+@media screen and (max-width: 1024px) {
+  .footer-container {
+    justify-content: center; /* Centra los elementos en pantallas de tablet */
+  }
+
+  .footer-section {
+    padding: 10px 0;
+    text-align: center;
+    flex: 1 1 100%; /* Permite que las secciones se ajusten al 100% del ancho */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px; /* Añade padding lateral para mejor espaciado */
+  }
+
+  .footer-section {
+    padding: 10px 0;
+    text-align: center;
+    flex: 1 1 100%;
+    min-width: unset; /* Elimina el tamaño mínimo de las secciones */
+  }
+
+  .footer-bottom {
+    padding: 15px; /* Añade más espacio en la parte inferior en pantallas pequeñas */
+  }
+
+  .footer-section ul li {
+    margin-bottom: 8px; /* Reduce el margen entre los enlaces */
+  }
+
+  .footer-section ul li a {
+    font-size: 12px; /* Disminuye el tamaño de fuente en dispositivos pequeños */
+  }
+
+  .social-media li a {
+    font-size: 12px; /* Ajusta el tamaño de los íconos de redes sociales */
+  }
+}
+
+
+
+
+.card:hover {
+    transform: scale(1.05);  /* Aumenta el tamaño de la tarjeta al pasar el cursor */
+}
+
+.card-content {
+    position: relative;
+}
+
+.front, .hover-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+
+
+
+/* Estilos para el menú */
+.menu {
+    animation:  fadeInUp  0.75s both;
+display: none; /* Oculto por defecto */
+    filter: blur(0px); /* Aplica el efecto de desenfoque */
+    transition: filter 0.3s ease, max-height 0.5s ease; /* Transición suave para el desenfoque y la animación de altura */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    position: absolute;
+    top: 65%; /* Despliega el menú justo debajo del botón */
+    left: 10%;
+    transform: translateX(-50%); /* Centra el menú debajo del botón */
+    width: 150px;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 100; /* Asegura que el menú esté por encima del contenido */
+    max-height: 0; /* Inicialmente no tiene altura */
+    overflow: hidden; /* Oculta contenido extra mientras se anima */
+}
+
+/* Mostrar el menú cuando se activa */
+.menu.show {
+    display: block; /* Mostrar el menú cuando se activa */
+    max-height: 300px; /* Altura máxima cuando el menú se despliega */
+}
+
+.menu:hover {
+    filter: blur(0px); /* Elimina el desenfoque cuando el ratón pasa sobre la imagen */
+}
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+/* Imagen que se mueve con la animación */
+.menu-image {
+    position: absolute;
+    top: 50%;  /* Alinea la imagen en el centro verticalmente de cada ítem */
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Centra la imagen en el ítem */
+    width: 50px; /* Tamaño inicial de la imagen */
+    height: auto;
+    opacity: 0; /* Imagen invisible por defecto */
+    pointer-events: none; /* Desactiva la interacción con la imagen */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.menu-item {
+    color: #830808;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.llano-grande, .rancho-nuevo, .maguey {
+    display: none; /* Por defecto ocultar todas las tarjetas */
+}
+
+/* Mostrar tarjetas cuando la opción está activa */
+.show-llano-grande .llano-grande,
+.show-rancho-nuevo .rancho-nuevo,
+.show-maguey .maguey {
+   
+    display: block;
+    opacity: 1; /* Hacer las tarjetas visibles */
+    transform: translateY(0); /* Moverlas a su posición original */
+    z-index: 1; /* Traer las tarjetas al frente */
+}
+
+/* Estilos para el botón con solo imagen */
+.boton-imagen {
+    cursor: pointer;        
+    display: inline-block;  
+    width: 200px;           
+    height: auto;            
+    border: none;           
+    background: none;   
+    padding: 0;              
+    margin: 0;
+}
+
+/* Efecto al pasar el ratón (hover) */
+.boton-imagen:hover {
+    transform: scale(1.03);   /* Hace que la imagen crezca un poco al pasar el ratón */
+    transition: transform 0.3s ease;  /* Suaviza el cambio de tamaño */
+}
+
+/* Estilos para el fondo oscuro y la imagen emergente */
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+    z-index: 1000; /* Para que esté por encima del contenido */
+    visibility: hidden; /* Inicialmente está oculto */
+    animation: animate__zoomInLeft 5s both;
+}
+
+
+@keyframes animate__zoomInLeft {
+    from {
+        opacity: 0;
+        transform: scale(0.5) translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+.popup-content {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 40%;
+    max-height: 50%;
+    position: relative; /* Permite que la "X" se posicione sobre el contenedor */
+    overflow: hidden; /* Oculta las partes de la imagen que salen fuera del contenedor */
+}
+
+.popup-images {
+    display: flex;
+    width: 200%; /* Hacemos que el contenedor sea dos veces más ancho que el contenido visible */
+    animation: moveLeftRight 10s linear infinite; /* La animación se mueve de izquierda a derecha */
+}
+
+.popup-image {
+    width: 50%; /* Cada imagen ocupará la mitad del contenedor */
+    height: auto;
+}
+
+@keyframes animate__zoomInDown {
+    from {
+        opacity: 0;
+        transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 10px, 0);
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes animate__zoomOutDown {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+    }
+}
+
+.popup.active {
+    visibility: visible;
+}
+
+.popup.animate__zoomInDown {
+    animation: animate__zoomInDown 0.75s both;
+}
+
+.popup.animate__zoomOutDown {
+    animation: animate__zoomOutDown 0.75s both;
+}
+@keyframes moveLeftRight {
+    0% {
+        transform: translateX(0); /* Empieza en la posición original */
+    }
+    100% {
+        transform: translateX(-50%); /* Mueve las imágenes completamente hacia la izquierda */
+    }
+}
+
+.popup-text {
+    margin-top: 15px;
+}
+
+.popup-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.popup-text p {
+    font-size: 16px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 6vh; /* La distancia desde el borde superior es el 5% del alto de la ventana */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta la posición para asegurar que esté centrado */
+    font-size: 10px;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Añadimos una transición suave */
+}
+/* Responsividad */
+@media (max-width: 1024px) {
+    .popup-content {
+        max-width: 90vw; /* Ajustamos el ancho para pantallas de tablets */
+        max-height: 70vh;
+    }
+
+    .popup-text h2 {
+        font-size: 5vw; /* Ajuste del tamaño de la fuente */
+    }
+
+    .popup-text p {
+        font-size: 3vw; /* Ajuste del tamaño del texto */
+    }
+
+    .close-btn {
+        font-size: 3vw; /* Ajuste del tamaño del botón */
+        padding: 2vh 3vw; /* Ajuste del padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .popup-content {
+        max-width: 50vw; /* Ajustamos el ancho para pantallas más pequeñas */
+        max-height: 40vh;
+        padding: 5vw 5vw;
+    }
+
+    .popup-text h2 {
+        font-size: 6vw; /* Ajuste del tamaño de la fuente */
+    }
+
+    .popup-text p {
+        font-size: 4vw; /* Ajuste del tamaño del texto */
+    }
+
+    .close-btn {
+        font-size: 4vw; /* Ajuste del tamaño del botón */
+        padding: 4vw 6vw; /* Ajuste del padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-content {
+        max-width: 80vw;
+        max-height: 50vh;
+        padding: 12vw 12vw;
+    }
+
+    .popup-text h2 {
+        font-size: 8vw; /* Ajuste del tamaño de la fuente */
+    }
+
+    .popup-text p {
+        font-size: 5vw; /* Ajuste del tamaño del texto */
+    }
+
+    .close-btn {
+        font-size: 5vw; /* Ajuste del tamaño del botón */
+        padding: 5vw 8vw; /* Ajuste del padding */
+    }
+}
+
+/* Media queries para pantallas medianas (computadoras portátiles y escritorios) */
+@media (min-width: 768px) and (max-width: 1200px) {
+    .popup-content {
+        width: 80%; /* El contenedor ocupa el 80% del ancho en pantallas medianas */
+        max-width: 600px; /* Máximo ancho de 600px */
+        max-height: 80%; /* Mantiene el máximo de altura al 80% */
+    }
+
+    .popup-text h2 {
+        font-size: 26px; /* Aumenta ligeramente el tamaño de fuente en pantallas medianas */
+        margin-bottom: 12px; /* Ajusta el margen inferior */
+    }
+
+    .popup-text p {
+        font-size: 18px; /* Aumenta el tamaño del texto en pantallas medianas */
+    }
+
+    .popup-images {
+        width: 200%; /* El contenedor sigue siendo dos veces más ancho */
+    }
+
+    .popup-image {
+        width: 50%; /* Cada imagen ocupa el 50% del ancho */
+    }
+
+    .close-btn {
+        top: 6vh; /* Mantiene la distancia desde el borde superior */
+        font-size: 14px; /* Aumenta el tamaño de la fuente */
+        padding: 12px; /* Aumenta el padding */
+    }
+}
+
+/* Media queries para pantallas grandes (pantallas de computadoras grandes y escritorios de alta resolución) */
+@media (min-width: 1200px) {
+    .popup-content {
+        max-width: 800px; /* Máximo ancho de 800px en pantallas grandes */
+        width: 70%; /* El contenedor ocupa el 70% del ancho de la pantalla */
+    }
+
+    .popup-text h2 {
+        font-size: 30px; /* Aumenta el tamaño de fuente en pantallas grandes */
+        margin-bottom: 14px; /* Ajusta el margen inferior */
+    }
+
+    .popup-text p {
+        font-size: 20px; /* Aumenta el tamaño del texto en pantallas grandes */
+    }
+
+    .popup-images {
+        width: 200%; /* El contenedor sigue siendo dos veces más ancho */
+    }
+
+    .popup-image {
+        width: 50%; /* Cada imagen ocupa el 50% del contenedor */
+    }
+
+    .close-btn {
+        top: 6vh; /* Mantiene la distancia desde el borde superior */
+        font-size: 16px; /* Aumenta el tamaño de la fuente */
+        padding: 14px; /* Aumenta el padding */
+    }
+}
+
+.contenido {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+
+
+/* Estilos generales para los contenedores */
+.contenedor {
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+/* Contenedor principal que alineará los elementos a la derecha */
+.contenedor-principal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Espacio entre los contenedores */
+  padding: 20px;
+}
+
+/* Contenedor de las imágenes dentro de cada contenedor */
+.imagenes-menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos imágenes por fila */
+  gap: 10px; /* Espacio entre las imágenes */
+}
+
+/* Estilos para las imágenes dentro de los contenedores */
+.contenedor img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el cursor */
+.contenedor:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto al pasar el cursor sobre la imagen */
+.contenedor:hover img {
+  transform: scale(1.1);
+}
+
+/* Estilo para el texto */
+.contenedor p {
+  padding: 10px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+/* Media Queries para dispositivos pequeños */
+@media (max-width: 1200px) {
+  .contenedor-principal {
+    gap: 40px; /* Reduce el espacio entre los elementos */
+  }
+
+  .contenedor {
+    width: 250px; /* Ajusta el tamaño de los contenedores */
+  }
+}
+
+/* Media Queries para dispositivos de tamaño medio (tablets y pantallas más pequeñas) */
+@media (max-width: 768px) {
+  .contenedor-principal {
+    gap: 20px; /* Menos espacio entre los elementos */
+  }
+
+  .contenedor {
+    width: 200px; /* Ajusta el tamaño de los contenedores */
+  }
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 480px) {
+  .contenedor-principal {
+    gap: 10px; /* Muy poco espacio entre los elementos */
+    padding: 40px; /* Menos espacio alrededor */
+  }
+
+  .contenedor {
+    width: 100%; /* Contenedores ocupan el 100% de la pantalla */
+    margin-bottom: 15px; /* Espacio inferior entre los elementos */
+  }
+
+  .contenedor p {
+    font-size: 14px; /* Ajusta el tamaño de la fuente */
+  }
+}
